@@ -21,6 +21,7 @@ function UserResults() {
 
     const data = await response.json()
     setUsers(data)
+    console.log(data);
     setLoading(false)
   }
 
@@ -33,6 +34,7 @@ function UserResults() {
             <UserItem 
               key={index}
               username={user.login} 
+              avatar={user.avatar_url}
             />
           )
         })}

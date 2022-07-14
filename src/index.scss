@@ -160,10 +160,36 @@ footer {
 
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem 0;
   &__box {
-    border: 1px solid red;
+    // border: 1px solid red;
     margin: 1rem;
-
+    padding: 2rem;
+    height: 10rem;
+    width: 30rem;
+    background-color: rgba(0, 0, 0, 0.337);
+    box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+    display: flex;
+    border-radius: 5px;
   }
+}
 
+.card-img{
+  // width: 4rem;
+  border-radius: 50%;
+}
+
+.card-heading{
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+}
+
+.card-link{
+  padding-left: 2rem;
+  text-decoration: none;
+  color: grey;
+  font-size: small;
+
+  
 }

@@ -9,9 +9,9 @@ function UserResults() {
   
   const {users, loading, fetchUsers} = useContext(GithubContext)
 
-  useEffect(() => {
-    fetchUsers()
-  }, [])
+  // useEffect(() => {
+  //   fetchUsers()
+  // }, [])
 
 
   if (!loading) {

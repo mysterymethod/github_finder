@@ -162,6 +162,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   padding: 4rem 0;
+
   &__box {
     // border: 1px solid red;
     margin: 1rem;
@@ -175,21 +176,59 @@ footer {
   }
 }
 
-.card-img{
+.card-img {
   // width: 4rem;
   border-radius: 50%;
 }
 
-.card-heading{
+.card-heading {
   padding-left: 2rem;
   padding-bottom: 2rem;
 }
 
-.card-link{
+.card-link {
   padding-left: 2rem;
   text-decoration: none;
   color: grey;
   font-size: small;
 
-  
+
+}
+
+//USER SEARCH
+.search {
+  margin: 0 4rem;
+
+  &__form {}
+
+  &__input {
+    padding: 1rem 2.5rem;
+    border-radius: .5rem;
+    outline: none;
+    border-style: none;
+    width: 30%;
+    margin-right: 2rem;
+    appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__button {
+    padding: 1.2rem 2.5rem;
+    border-radius: .5rem;
+    background-color: rgba(0, 0, 0, 0.388);
+    border: none;
+    color: white;
+  }
+}
+
+.clear-button {
+  text-transform: uppercase;
+  margin-top: 2rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding-left: .2rem;
 }

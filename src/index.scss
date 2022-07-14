@@ -96,13 +96,35 @@ nav {
 .about {
   padding: 0 5rem;
   &__heading {
-
   }
-
   &__paragraph {
     padding: 6rem 0;
   }
 }
+
+// N O T  F O U N D  P A G E
+
+.notFound {
+  text-align: center;
+
+  &__header {
+
+  }
+
+  &__subHeader {
+    padding: 5rem 0;
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+    background-color: blueviolet;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+  }
+}
+
 
 
 

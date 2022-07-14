@@ -1,3 +1,6 @@
+$color-blue-tint : #202142;
+
+
 *,
 *::after,
 *::before {
@@ -15,6 +18,108 @@ body {
   font-size: 1.6rem;
   font-weight: 600;
   // line-height: 1.7;
-  background-color: black;
+  background-color: $color-blue-tint;
   color: white;
+}
+
+
+//S C R E E N  C O N T A I N E R
+.screen-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+
+// N A V B A R
+nav {
+  background-color: rgba(0, 0, 0, 0.388);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+}
+
+.logo-box {
+  display: flex;
+  &__img {
+    padding-right: 1rem;
+  }
+
+  &__title {
+    color: white;
+    text-decoration: none;
+    padding-right: 1rem;
+    margin-top: 1rem;
+  }
+}
+.nav_buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+
+  &__home {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    align-self: center;
+  }
+
+  &__about {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    align-self: center;
+  }
+}
+
+// .logo-box {
+//   flex: none;
+
+//   &__img {
+//     padding-right: 1rem;
+//     display: inline-block;
+//   }
+
+//   &__title {
+//     color: white;
+//     text-decoration: none;
+//     padding-right: 1rem;
+//     margin-top: 1rem;
+//   }
+// }
+
+// .nav_buttons {
+//   display: flex;
+//   justify-content: flex-end;
+//   margin: 0 2rem;
+//   // text-transform: uppercase;
+
+
+//   &__home {
+//     color: white;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     margin: 0 2rem;
+//   }
+
+//   &__about {
+//     color: white;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//     margin: 0 2rem;
+//   }
+
+
+
+
+
+
+
+
+// H E L P E R C L A S S
+.container {
+  max-width: 90%;
+  margin: auto;
 }

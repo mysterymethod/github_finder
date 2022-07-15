@@ -1,4 +1,4 @@
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaTimesCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 function Navbar({ title }) {

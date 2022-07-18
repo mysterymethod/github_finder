@@ -8,6 +8,7 @@ export const GithubProvider = ({ children }) => {
   //INITIAL STATE
   const initialState = {
     users: [],
+    user:{},
     loading: false
   }
 
@@ -39,7 +40,8 @@ export const GithubProvider = ({ children }) => {
 
 
 
-  //SEARCH USER
+  //SEARCH USERS
+  //URL - https://api.github.com/search/users?q=pranoy
   const searchUsers = async (text) => {
 
     setLoading(false)
@@ -55,7 +57,7 @@ export const GithubProvider = ({ children }) => {
     })
 
     const data = await response.json()
-    console.log(data.items);
+    //console.log(data.items);
 
     dispatch({
       type: 'GET_USERS',
@@ -63,6 +65,40 @@ export const GithubProvider = ({ children }) => {
     })
   }
 
+
+  //SEARCH SINGLE USER
+  //url - https://api.github.com/users/pranoy
+  const searchUser = async (username) => {
+
+    setLoading(false)
+
+    const Json = JSON.stringify(username)
+    console.log(Json);
+    //console.log(`${process.env.REACT_APP_GITHUB_URL}/users/${username}`);
+    const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users/${username}`, {
+      headers: {
+        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
+      },
+    })
+
+    const data = await response.json()
+    console.log(data);
+
+    dispatch({
+      type: 'GET_USER',
+      payload: data
+    })
+  }
+
+
+  //SET USER
+  const setUser = (user) => {
+    // console.log(user);
+    dispatch({
+      type: 'SET_USER',
+      payload: user
+    })
+  }
 
 
   //SET LOADING - TRUE/FALSE
@@ -80,10 +116,13 @@ export const GithubProvider = ({ children }) => {
 
   return <GithubContext.Provider value={{
     users: state.users,
+    user: state.user,
     loading: state.loading,
     fetchUsers,
     searchUsers,
-    clearUsers
+    searchUser,
+    clearUsers,
+    setUser
   }}>
 
     {children}

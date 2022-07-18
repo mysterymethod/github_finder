@@ -8,6 +8,7 @@ import NotFound from './components/pages/NotFound';
 
 import { GithubProvider } from './context/github/GithubContext';
 import { AlertProvider } from './context/alert/AlertContext';
+import User from './components/pages/User';
 
 
 function App() {
@@ -31,6 +32,14 @@ function App() {
                     path='/about'
                     element={<About />}
                   />
+
+                  <Route
+                    exact
+                    // after colon (login) write anything
+                    path='/users/:login'
+                    element={<User />}
+                  />
+
 
                   <Route
                     exact

@@ -2,10 +2,11 @@ import { useContext, useEffect } from "react"
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa"
 import { useParams, Link } from "react-router-dom"
 import GithubContext from "../../context/github/GithubContext"
+import RepoList from "../repos/RepoList"
 
 function User() {
 
-  const { user, searchUser } = useContext(GithubContext)
+  const { user, searchUser, repos, getRepos } = useContext(GithubContext)
 
   const params = useParams()
 
@@ -27,8 +28,8 @@ function User() {
   } = user
 
   useEffect(() => {
-    // console.log(typeof user, user);
     searchUser(params.login)
+    getRepos(params.login)
   }, [])
 
 
@@ -62,49 +63,54 @@ function User() {
 
       </div>
 
-     {/* MORE USER DETAIL */}
+      {/* MORE USER DETAIL */}
 
-      <div className="card">
-        <div className="card__details">
-          <p>followers</p>
-          <strong className="card__followers">{followers}</strong>
+      <div className="card-box">
+        <div className="card">
+          <div className="card__details">
+            <p>followers</p>
+            <strong className="card__followers">{followers}</strong>
+          </div>
+          <div className="card__logo">
+            <FaUsers size={35} color={"darkmagenta"} />
+          </div>
         </div>
-        <div className="card__logo">
-          <FaUsers size={35} color={"pink"} />
+
+        <div className="card">
+          <div className="card__details">
+            <p>following</p>
+            <strong className="card__followers">{following}</strong>
+          </div>
+          <div className="card__logo">
+            <FaUserFriends size={35} color={"darkmagenta"} />
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card__details">
+            <p>pub. repos</p>
+            <strong className="card__followers">{public_repos}</strong>
+          </div>
+          <div className="card__logo">
+            <FaCodepen size={35} color={"darkmagenta"} />
+          </div>
+        </div>
+
+        <div className="card">
+          <div className="card__details">
+            <p>pub. gists</p>
+            <strong className="card__followers">{public_gists}</strong>
+          </div>
+          <div className="card__logo">
+            <FaStore size={35} color={"darkmagenta"} />
+          </div>
         </div>
       </div>
 
-      <div className="card">
-        <div className="card__details">
-          <p>followers</p>
-          <strong className="card__followers">{followers}</strong>
-        </div>
-        <div className="card__logo">
-          <FaUsers size={35} color={"pink"} />
-        </div>
-      </div>
+      {/* REPOSITORY DETAIL OF SELECTED USER */}
+      <RepoList />
 
-      <div className="card">
-        <div className="card__details">
-          <p>followers</p>
-          <strong className="card__followers">{followers}</strong>
-        </div>
-        <div className="card__logo">
-          <FaUsers size={35} color={"pink"} />
-        </div>
-      </div>
 
-      <div className="card">
-        <div className="card__details">
-          <p>followers</p>
-          <strong className="card__followers">{followers}</strong>
-        </div>
-        <div className="card__logo">
-          <FaUsers size={35} color={"pink"} />
-        </div>
-      </div>
-
-      
     </>
   )
 }

@@ -9,6 +9,7 @@ export const GithubProvider = ({ children }) => {
   const initialState = {
     users: [],
     user:{},
+    repos:[],
     loading: false
   }
 
@@ -90,6 +91,31 @@ export const GithubProvider = ({ children }) => {
     })
   }
 
+  //GET REPOS OF SELECTED USER
+  //url - https://api.github.com/users/pranoy/repos
+  const getRepos = async (username) => {
+
+    setLoading(false)
+
+    const params = new URLSearchParams({
+      sort: 'created',
+      per_page: 10
+    })
+
+    const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users/${username}/repos?${params}`, {
+      headers: {
+        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
+      },
+    })
+
+    const data = await response.json()
+    
+    dispatch({
+      type: 'GET_REPOS',
+      payload: data
+    })
+  }
+
 
   //SET USER
   const setUser = (user) => {
@@ -118,6 +144,8 @@ export const GithubProvider = ({ children }) => {
     users: state.users,
     user: state.user,
     loading: state.loading,
+    repos: state.repos,
+    getRepos,
     fetchUsers,
     searchUsers,
     searchUser,

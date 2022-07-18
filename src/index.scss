@@ -368,17 +368,23 @@ footer {
 
 //CARD
 
+.card-box{
+  // background-color: red;
+  text-align: center;
+}
+
+
 .card {
 
-  display: flex;
+  display: inline-flex;
   background-color: rgba(0, 0, 0, 0.388);
-  width: 17rem;
-  margin: 2rem auto;
+  width: 20rem;
+  margin: 2rem 3rem;
   padding: 2rem 3rem;
-  gap: 2rem;
+  gap: 2.5rem;
   border-radius: .6rem;
   box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
-
+  
   &__details {
     text-transform: capitalize;
     color: grey;
@@ -394,4 +400,34 @@ footer {
 
   }
 
+}
+
+
+//REPOSITORY ITEM 
+.repo-box {
+
+  background-color: rgba(0, 0, 0, 0.388);
+  width: 85%;
+  margin: 3rem auto;
+  padding: 2rem 3rem;
+  border-radius: .6rem;
+  box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+
+  &__heading {
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+}
+
+.repo-item {
+  background-color: #202142;
+  margin: 2rem 1rem;
+  padding: 2rem 2rem;
+  border-radius: .6rem;
+  box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+
+  &__heading {
+    display: inline-block;
+    margin-left: 2rem;
+  }
 }

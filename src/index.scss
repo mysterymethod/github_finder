@@ -199,8 +199,7 @@ footer {
 .search {
   margin: 4rem 4rem;
 
-  &__form {
-  }
+  &__form {}
 
   &__input {
     padding: 1rem 2.5rem;
@@ -235,7 +234,164 @@ footer {
   color: white;
   padding: .5rem 1rem;
   border-radius: .5rem;
+
   &:hover {
     background-color: grey;
   }
+}
+
+
+
+//SINGLE USER COMPONENT
+.user {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.388);
+  padding: 4rem 5rem;
+  max-width: 85%;
+  margin: 0 auto;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 3rem;
+  box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+
+  &__img-side {
+    // background-color: red;
+  }
+
+  &__img {
+    height: 20rem;
+    width: 20rem;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: .6rem;
+    box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+  }
+
+  &__link {
+    text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      font-weight: 500;
+      text-align: center;
+      align-self: flex-start;   
+      display: block;
+  }
+
+
+  &__detail-side {
+    // background-color: green;
+  }
+
+  &__name {
+    margin-bottom: 1rem;
+  }
+
+  &__status {
+    color: green;
+    text-transform: capitalize;
+    background-color: rgba(0, 128, 0, 0.347);
+    padding: .3rem .7rem;
+    border-radius: 1rem;
+    margin-right: 1.5rem;
+  }
+
+  &__hireable {
+    color: lightseagreen;
+    text-transform: capitalize;
+    background-color: rgba(32, 178, 171, 0.308);
+    padding: .3rem .7rem;
+    border-radius: 1rem;
+  }
+
+  &__bio {
+    margin: 2.5rem 0;
+  }
+
+  &__githubURL {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-weight: 500;
+    border: 1px solid white;
+    padding: .8rem .7rem;
+    border-radius: .5rem;
+  }
+
+  &__location {
+
+    background-color: #202142;
+    display: inline-block;
+    margin-top: 2rem;
+    
+    padding: 1.2rem 1rem;
+    border-radius: .6rem;
+    box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+    &__title {
+      font-size: 1.3rem;
+      text-transform: capitalize;
+      color: grey;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
+    &__data {
+      font-size: 1.6rem;
+      font-weight: 500;
+      
+    }
+  }
+
+  &__website {
+
+    background-color: #202142;
+    display: inline-block;
+    margin-top: 2.5rem;
+    margin-left: 2rem;
+    padding: 1.2rem 1rem;
+    border-radius: .6rem;
+    box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+    &__title {
+      font-size: 1.3rem;
+      text-transform: capitalize;
+      color: grey;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+    }
+    &__data {
+      font-size: 1.6rem;
+      font-weight: 500;
+      
+    }
+  }
+}
+
+
+//CARD
+
+.card {
+
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.388);
+  width: 17rem;
+  margin: 2rem auto;
+  padding: 2rem 3rem;
+  gap: 2rem;
+  border-radius: .6rem;
+  box-shadow: .7rem .7rem 1rem .5rem rgba(0, 0, 0, 0.238);
+
+  &__details {
+    text-transform: capitalize;
+    color: grey;
+    font-size: 1.2rem;
+  }
+
+  &__followers{
+    color: white;
+    font-size: 1.9rem;
+  }
+
+  &__logo {
+
+  }
+
 }

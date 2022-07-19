@@ -1,6 +1,7 @@
 $color-blue-tint : #202142;
 
 
+
 *,
 *::after,
 *::before {
@@ -20,6 +21,12 @@ body {
   // line-height: 1.7;
   background-color: $color-blue-tint;
   color: white;
+}
+
+
+//UTILITY CLASSES
+.margin-left {
+  margin-left: 1rem;
 }
 
 
@@ -248,7 +255,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.388);
   padding: 4rem 5rem;
   max-width: 85%;
-  margin: 0 auto;
+  margin: 2rem auto;
   flex-direction: row;
   justify-content: space-evenly;
   gap: 3rem;
@@ -429,5 +436,38 @@ footer {
   &__heading {
     display: inline-block;
     margin-left: 2rem;
+    margin-bottom: 1rem;
   }
+
+  &__detail {
+
+    &__eye {
+      background-color: rgba(32, 178, 171, 0.218);
+      color: lightseagreen;
+    }
+
+    &__star {
+      background-color: rgba(0, 128, 0, 0.31);
+      color: green;
+    }
+
+    &__info {
+      background-color: rgba(255, 0, 0, 0.152);
+      color: red;
+    }
+
+    &__utensils {
+      background-color: rgba(255, 255, 0, 0.252);
+      color: yellow;
+    }
+  }
+}
+
+
+.highlight-box {
+  // background-color: lightseagreen;
+  margin: 1rem 2rem;
+  padding: 1rem 2rem;
+  display: inline-block;
+  border-radius: 1rem;
 }

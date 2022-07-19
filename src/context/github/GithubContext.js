@@ -73,8 +73,6 @@ export const GithubProvider = ({ children }) => {
 
     setLoading(false)
 
-    const Json = JSON.stringify(username)
-    console.log(Json);
     //console.log(`${process.env.REACT_APP_GITHUB_URL}/users/${username}`);
     const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users/${username}`, {
       headers: {
@@ -83,7 +81,7 @@ export const GithubProvider = ({ children }) => {
     })
 
     const data = await response.json()
-    console.log(data);
+    // console.log(data);
 
     dispatch({
       type: 'GET_USER',

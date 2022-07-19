@@ -20,19 +20,24 @@ function RepoItems({ repo }) {
         <FaLink />
         <h3 className='repo-item__heading'>{name}</h3>
 
-        <div className='repos-item__detail'>
-          <div className='repos-item__detail__eye'>
+        <div className='repo-item__detail'>
+          <div className='repo-item__detail__eye highlight-box'>
             <FaEye />
-            <span>{forks} </span>
+            <span className='margin-left'>{watchers_count} </span>
           </div>
-          <div className='repos-item__detail__star'>
+          <div className='repo-item__detail__star highlight-box'>
             <FaStar />
+            <span className='margin-left'>{stargazers_count} </span>
           </div>
-          <div className='repos-item__detail__info'>
+          <div className='repo-item__detail__info highlight-box'>
             <FaInfo />
+            <span className="margin-left">
+              {open_issues}
+            </span>
           </div>
-          <div className='repos-item__detail__utensils'>
+          <div className='repo-item__detail__utensils highlight-box'>
             <FaUtensils />
+            <span className="margin-left">{forks}</span>
           </div>
         </div>
       </div>

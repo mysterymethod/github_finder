@@ -41,80 +41,6 @@ export const GithubProvider = ({ children }) => {
 
 
 
-  //SEARCH USERS
-  //URL - https://api.github.com/search/users?q=pranoy
-  const searchUsers = async (text) => {
-
-    setLoading(false)
-
-    const params = new URLSearchParams({
-      q: text
-    })
-
-    const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/search/users?${params}`, {
-      headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-      },
-    })
-
-    const data = await response.json()
-    //console.log(data.items);
-
-    dispatch({
-      type: 'GET_USERS',
-      payload: data.items
-    })
-  }
-
-
-  //SEARCH SINGLE USER
-  //url - https://api.github.com/users/pranoy
-  const searchUser = async (username) => {
-
-    setLoading(false)
-
-    //console.log(`${process.env.REACT_APP_GITHUB_URL}/users/${username}`);
-    const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users/${username}`, {
-      headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-      },
-    })
-
-    const data = await response.json()
-    // console.log(data);
-
-    dispatch({
-      type: 'GET_USER',
-      payload: data
-    })
-  }
-
-  //GET REPOS OF SELECTED USER
-  //url - https://api.github.com/users/pranoy/repos
-  const getRepos = async (username) => {
-
-    setLoading(false)
-
-    const params = new URLSearchParams({
-      sort: 'created',
-      per_page: 10
-    })
-
-    const response = await fetch(`${process.env.REACT_APP_GITHUB_URL}/users/${username}/repos?${params}`, {
-      headers: {
-        Authorization: `token ${process.env.REACT_APP_GITHUB_TOKEN}`
-      },
-    })
-
-    const data = await response.json()
-    
-    dispatch({
-      type: 'GET_REPOS',
-      payload: data
-    })
-  }
-
-
   //SET USER
   const setUser = (user) => {
     // console.log(user);
@@ -143,10 +69,8 @@ export const GithubProvider = ({ children }) => {
     user: state.user,
     loading: state.loading,
     repos: state.repos,
-    getRepos,
+    dispatch,
     fetchUsers,
-    searchUsers,
-    searchUser,
     clearUsers,
     setUser
   }}>
